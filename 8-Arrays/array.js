@@ -183,15 +183,38 @@ let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'ea
 // yukardaki diziden aşağıdaki tekti elde edelim
 // “Programming is not about what you know it is about what you can figure out. -2015, Chris Pine, Learn to Program”
 
-
-
 secretMessage.splice(7, 5);
 secretMessage[0] = 'Programming';
 secretMessage[6] = 'know';
 secretMessage.pop();
 secretMessage.push('to Program');
-
 secretMessage = secretMessage.join(" ");
-secretMessage = `'${secretMessage}'`;
+secretMessage = `"${secretMessage}"`;
 
 console.log(secretMessage);
+
+/***************************************/
+// Arrays and Function
+/************************************ */
+
+let user = ['John Doe', 45, true];
+
+function updateUser(user) {
+  user[0] = 'John Smith'
+}
+
+updateUser(user);
+console.log(user);   // ["John Smith", 45, true]
+
+//  Global arrayin parametresini function değiştirir
+// but  Global değişkeni function değiştirmez.
+
+let name = 'John Doe';
+
+function updateName(name) {
+  name = 'John Smith'
+}
+
+updateName(name);
+console.log(name);   // John Doe
+
