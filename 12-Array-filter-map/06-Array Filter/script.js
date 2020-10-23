@@ -41,3 +41,14 @@ for (let i = 0; i < 4; i++) {
 }
 
 console.log(getArray2);
+
+
+// Mustafa beyden, For döngüsüyle yazdığım kısmı yapıyor
+
+var pairs = getArray.map(function (indexes) {
+  var student = students[indexes[0]];
+  var mentor = mentors[indexes[1]];
+  return [student, mentor];
+});
+
+console.log(pairs);

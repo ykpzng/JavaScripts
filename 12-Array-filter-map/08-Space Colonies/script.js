@@ -24,26 +24,23 @@ const voyagers = [
 
 function colonisers(arr) {
 
-  
+  const alpha = arr.filter(obj => obj[0] === 'A' && obj.includes('family') === true);
+  return alpha;
 }
 
+console.log(colonisers(voyagers));
 
 
 
-
-
-
-
-
-/* ======= TESTS - DO NOT MODIFY ===== */
+/* ======= TESTS - DO NOT MODIFY =====*/
 function test(test_name, actual, expected) {
-    let status;
-    if (actual, expected) {
-        status = "PASSED";
-    } else {
-        status = `FAILED: expected: ${expected} but your function returned: ${actual}`;
-    }
-    console.log(`${test_name}: ${status}`);
+  let status;
+  if (actual, expected) {
+    status = "PASSED";
+  } else {
+    status = `FAILED: expected: ${expected} but your function returned: ${actual}`;
+  }
+  console.log(`${test_name}: ${status}`);
 }
 test(
   "colonisers function works",
