@@ -11,15 +11,12 @@ var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 /* 1.Yol Diziden sadece 2 elemanlı dizileri seçme*/
 const getArray = pairsByIndexRaw
   .filter(value => Array.isArray(value))
-  .filter(value => value.length > 1);
+  .filter(value => value.length === 2);
 
 //  3 diziyi birleştiren döngü 
-
 for (let i = 0; i < 4; i++) {
-  for (let j = 0; j < 1; j++) {
-    getArray[i][j] = students[i];
-    getArray[i][j + 1] = mentors[i];
-  }
+  getArray[i][0] = students[getArray[i][0]];
+  getArray[i][1] = mentors[getArray[i][1]];
 }
 
 console.log(getArray);
@@ -29,26 +26,29 @@ console.log(getArray);
 
 /* 2.Yol Diziden sadece 2 elemanlı dizileri seçme*/
 
+/*
 let getArray2 = (value) => Array.isArray(value) && value.length > 1;
 
 getArray2 = pairsByIndexRaw.filter(getArray2);
 
 for (let i = 0; i < 4; i++) {
-  for (let j = 0; j < 1; j++) {
-    getArray2[i][j] = students[i];
-    getArray2[i][j + 1] = mentors[i];
-  }
+  getArray2[i][0] = students[getArray2[i][0]];
+  getArray2[i][1] = mentors[getArray2[i][1]];
 }
 
 console.log(getArray2);
 
+*/
+
+
+
 
 // Mustafa beyden, For döngüsüyle yazdığım kısmı yapıyor
 
-var pairs = getArray.map(function (indexes) {
-  var student = students[indexes[0]];
-  var mentor = mentors[indexes[1]];
-  return [student, mentor];
-});
+// var pairs = getArray.map(function (indexes) {
+//   var student = students[indexes[0]];
+//   var mentor = mentors[indexes[1]];
+//   return [student, mentor];
+// });
 
-console.log(pairs);
+// console.log(pairs);
