@@ -37,6 +37,8 @@ do {
 } while (j < 5);
 
 
+//Şifrenin 3 kez yanlış girilmesi halinde programdan çıkar
+
 const userName = 'abc';
 const userPass = '123';
 let yourUser = '';
@@ -57,3 +59,31 @@ do {
     counter++;
   }
 } while (true);
+
+
+//Şifrenin 5 kez yanlış girilmesi halinde programdan çıkar
+
+let username = 'abc';
+let pass = '123';
+let isLoggedIn = false;
+let limit = 5;
+
+let usernamePrompt;
+let passPrompt;
+
+while (!isLoggedIn && limit > 0) {
+  usernamePrompt = prompt('Enter your username');
+  passPrompt = prompt('Enter your password');
+
+  if (usernamePrompt === username && passPrompt === pass) {
+    isLoggedIn = true;
+    console.log('Successfully logged in!')
+  } else {
+    limit--;
+    console.log('Your Password or Username is wrong. You have ' + limit + ' attempt left.')
+  }
+}
+
+if (limit === 0) {
+  console.log('Your account is suspended!')
+}
