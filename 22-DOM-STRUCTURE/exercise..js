@@ -1,6 +1,6 @@
 
 
-// Celcius to Kelvin
+// Celsius to Kelvin
 
 /*
 document.getElementById('buton').onclick = function () {
