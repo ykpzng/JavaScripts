@@ -79,3 +79,4 @@ document.querySelector('p').onclick = changeColor2;
 for (elemet of document.querySelectorAll('p')) {
   elemet.onclick = changeColor2;
 }
+
