@@ -46,4 +46,3 @@ fahrenheit.oninput = function () {
   }
 }
 
-
