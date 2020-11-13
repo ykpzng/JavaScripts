@@ -1,5 +1,5 @@
 
-
+/// -----  Number guessing game --------
 
 let random = Math.floor(Math.random() * 50 + 1);
 let point = 10, score = 0, highScore = 0;
@@ -7,12 +7,12 @@ const guess = document.querySelector('#input_box');
 
 document.querySelector('#input_box').select();
 
-
+// Check button
 document.querySelector('#check_btn').onclick = function () {
   play();
 }
 
-
+// Again button
 document.querySelector('#again_btn').onclick = function () {
   point = 10;
   random = Math.floor(Math.random() * 50 + 1);
@@ -23,12 +23,13 @@ document.querySelector('#again_btn').onclick = function () {
   document.querySelector('#input_box').select();
 }
 
-
+//Play function
 function play() {
 
   if (point == 0) {
     document.querySelector('.message').innerHTML = 'Your right is over...';
     document.body.style.background = 'red';
+    document.querySelector('#input_box').value = "";
   } else {
 
     if (Number(guess.value) < 1 || Number(guess.value) > 50) {
