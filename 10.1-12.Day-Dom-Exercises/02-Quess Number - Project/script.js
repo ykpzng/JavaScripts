@@ -1,11 +1,17 @@
 
-let random = Math.floor(Math.random() * 50 + 1);
 
+
+let random = Math.floor(Math.random() * 50 + 1);
+let point = 10, score = 0, highScore = 0;
 const guess = document.querySelector('#input_box');
 
-let point = 10, score = 0, highScore = 0;
-
 document.querySelector('#input_box').select();
+
+
+document.querySelector('#check_btn').onclick = function () {
+  play();
+}
+
 
 document.querySelector('#again_btn').onclick = function () {
   point = 10;
@@ -13,11 +19,12 @@ document.querySelector('#again_btn').onclick = function () {
   document.body.style.background = 'black';
   document.querySelector('.score').innerHTML = 10;
   document.querySelector('#input_box').value = "";
+  document.querySelector('.message').innerHTML = 'Start guessing...';
   document.querySelector('#input_box').select();
 }
 
 
-document.querySelector('#check_btn').onclick = function () {
+function play() {
 
   if (point == 0) {
     document.querySelector('.message').innerHTML = 'Your right is over...';
@@ -26,7 +33,7 @@ document.querySelector('#check_btn').onclick = function () {
 
     if (Number(guess.value) < 1 || Number(guess.value) > 50) {
       document.querySelector('.message').innerHTML = 'You must enter between 1-50';
-      point--;
+      //point--;
     }
     else {
       if (guess.value > random) {
@@ -38,7 +45,6 @@ document.querySelector('#check_btn').onclick = function () {
         document.body.style.background = 'black';
         point--;
       } else {
-        document.querySelector('#input_box').disabled = true;
         document.querySelector('.message').innerHTML = 'You are winner...';
         document.body.style.background = 'green';
         document.querySelector('.number').innerHTML = random;
