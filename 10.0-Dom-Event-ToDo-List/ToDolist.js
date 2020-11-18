@@ -1,21 +1,5 @@
 
-//Dom Event- EventListener
 
-/*
---event   -    işlem, iş, etkinlik
----event listener - dinleme
----event trigger  - tetikleme
----event handler-  fonksiyonun çalışması
-*/
-
-/*
-1 - App'in create, edit, update, delete fonksiyonlarını çalıştırma 
-2 - yaptığımız taskleri objelere kaydetme
-3 - Objeleri oluştururken class ları kullanma
-4 - Uygulamayı moduler yapıya dönüştürme
-5 - Local storage'e kaydetmek 
-
-*/
 
 const inputBox = document.getElementById('item_name');
 
@@ -25,12 +9,12 @@ function addItem(e) {
       alert('Enter a value....');
     } else {
 
-      //Create list item
+      //Create <li> item
       const listItem = document.createElement('li');
       listItem.className = 'list_li';
       document.getElementById('task_list').appendChild(listItem);
 
-      //create Text item
+      //create input text item
       const itemInput = document.createElement('input');
       itemInput.className = 'item-input';
       itemInput.hidden = true;
@@ -40,6 +24,8 @@ function addItem(e) {
       const itemText = document.createElement('span');
       itemText.className = 'item-text';
       itemText.innerHTML = inputBox.value;
+      itemText.style.cursor = 'pointer';
+      itemText.addEventListener('click', completeItem);
       listItem.appendChild(itemText);
 
       //Create Edit button
@@ -102,14 +88,18 @@ const saveItem = function (e) {
   const editGroupButtons = e.target.parentElement.getElementsByClassName('btn-grup-edit');
   const saveGroupButtons = e.target.parentElement.getElementsByClassName('btn-grup-save');
 
-  textItem.innerHTML = textInput.value;
+  if (textInput.value.trim() === "") {
+    alert('Enter a value....');
+  } else {
+    textItem.innerHTML = textInput.value;
+  }
   textInput.hidden = true;
   textItem.hidden = false;
 
-  for (i of editGroupButtons) {
+  for (let i of editGroupButtons) {
     i.hidden = false;
   }
-  for (i of saveGroupButtons) {
+  for (let i of saveGroupButtons) {
     i.hidden = true;
   }
 
@@ -124,10 +114,10 @@ const cancelItem = function (e) {
   textInput.hidden = true;
   textItem.hidden = false;
 
-  for (i of editGroupButtons) {
+  for (let i of editGroupButtons) {
     i.hidden = false;
   }
-  for (i of saveGroupButtons) {
+  for (let i of saveGroupButtons) {
     i.hidden = true;
 
   }
@@ -144,17 +134,26 @@ const editItem = function (e) {
   textItem.hidden = true;
   textInput.value = textItem.innerHTML;
 
+  textInput.select();   // Text seçilihale geliyor
 
-  for (i of editGroupButtons) {
+
+  for (let i of editGroupButtons) {
     i.hidden = true;
   }
-  for (i of saveGroupButtons) {
+  for (let i of saveGroupButtons) {
     i.hidden = false;
   }
-
-
 }
 
+// Tektin üzerini çizer veya çizgiyi kaldırır
+const completeItem = function (e) {
+  const textItem = e.target.parentElement.getElementsByClassName('item-text')[0];
+  if (textItem.style.textDecoration === 'line-through') {
+    textItem.style.textDecoration = 'none';
+  } else {
+    textItem.style.textDecoration = 'line-through';
+  }
+}
 
 //document.getElementById('btn_add').onclick = addItem;
 
@@ -170,18 +169,22 @@ inputBox.addEventListener('keypress', addItem);
 
 // Html den hazır gelen remove_btn lere remove item eklmek için döngügerekir. getElementsByClassName array döndürdüğü için döngüyle içine giriliyor
 
-for (i of document.getElementsByClassName('remove_btn')) {
+for (let i of document.getElementsByClassName('remove_btn')) {
   i.addEventListener('click', removeItem);
 }
 
-for (i of document.getElementsByClassName('edit_btn')) {
+for (let i of document.getElementsByClassName('edit_btn')) {
   i.addEventListener('click', editItem);
 }
 
-for (i of document.getElementsByClassName('save-btn')) {
+for (let i of document.getElementsByClassName('save-btn')) {
   i.addEventListener('click', saveItem);
 }
 
-for (i of document.getElementsByClassName('cancel_btn')) {
+for (let i of document.getElementsByClassName('cancel_btn')) {
   i.addEventListener('click', cancelItem);
+}
+
+for (let i of document.getElementsByClassName('item-text')) {
+  i.addEventListener('click', completeItem);
 }
