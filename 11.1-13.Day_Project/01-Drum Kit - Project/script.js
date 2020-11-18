@@ -5,10 +5,18 @@ const drums = document.querySelectorAll('.drum');
 const order = ['w', 'a', 's', 'd', 'j', 'k', 'l'];
 
 for (let i = 0; i < drums.length; i++) {
-
+  let time;
   drums[i].onclick = function () {
     let audio = new Audio('sounds/tom-' + order[i] + '.mp3');
     audio.play();
+
+    function runTime() {
+      time = setTimeout(() => { drums[i].className = 'pressed' }, 2000);
+    }
+  }
+
+  function stop() {
+    clearTimeout(time);
   }
 
 }
