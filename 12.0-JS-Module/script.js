@@ -1,10 +1,8 @@
-import Student from './student';
-import Student from './teacher';
 
+import { Student } from './student';
 
+import { Teacher } from './teacher';
 
+console.log(Student);
+console.log(Teacher);
 
-
-
-
-console.log(Student)

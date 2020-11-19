@@ -1,21 +1,20 @@
-
+let celsius, kelvin, fahrenheit, inputOne, inputTwo, selectOne, selectTwo;
 
 // Birinci select değeri değiştiğinde gerçekleşen işlemler
 document.getElementById('select_one').onchange = function () {
 
-  const inputOne = document.getElementById('input_one');
-  const inputTwo = document.getElementById('input_two');
-  let selectOne = document.getElementById('select_one');
-  let selectTwo = document.getElementById('select_two');
-
+  inputOne = document.getElementById('input_one');
+  inputTwo = document.getElementById('input_two');
+  selectOne = document.getElementById('select_one');
+  selectTwo = document.getElementById('select_two');
 
   if (selectOne.value === 'Celsius') {
     celsius = inputOne;
     if (selectTwo.value === 'Fahrenheit') {
-      inputTwo.value = (Number(celsius.value) * 9 / 5 + 32).toFixed(2);
+      inputTwo.value = (Number(celsius.value * 9 / 5) + 32).toFixed(2);
     }
     if (selectTwo.value === 'Kelvin') {
-      inputTwo.value = (Number(celsius.value) + 273.15).toFixed(2);
+      inputTwo.value = (Number(celsius.value + 273.15)).toFixed(2);
     }
     if (selectTwo.value === 'Celsius') {
       inputTwo.value = celsius.value;
@@ -51,94 +50,51 @@ document.getElementById('select_one').onchange = function () {
 // İkinci select değeri değiştiğinde gerçekleşen işlemler
 
 document.getElementById('select_two').onchange = function () {
-  let celsius, kelvin, fahrenheit;
-  const inputOne = document.getElementById('input_one');
-  const inputTwo = document.getElementById('input_two');
-  let selectOne = document.getElementById('select_one');
-  let selectTwo = document.getElementById('select_two');
+
+  inputOne = document.getElementById('input_one');
+  inputTwo = document.getElementById('input_two');
+  selectOne = document.getElementById('select_one');
+  selectTwo = document.getElementById('select_two');
 
   if (selectTwo.value === 'Celsius') {
-    celsius = inputTwo;
+    celsius = inputOne;
     if (selectOne.value === 'Fahrenheit') {
-      inputOne.value = (Number(celsius.value) * 9 / 5 + 32).toFixed(2);
+      inputTwo.value = (Number(celsius.value * 9 / 5) + 32).toFixed(2);
     }
     if (selectOne.value === 'Kelvin') {
-      inputOne.value = (Number(celsius.value) + 273.15).toFixed(2);
+      inputTwo.value = (Number(celsius.value + 273.15)).toFixed(2);
     }
     if (selectOne.value === 'Celsius') {
-      inputOne.value = celsius.value;
+      inputTwo.value = celsius.value;
     }
   }
   if (selectTwo.value === 'Fahrenheit') {
-    fahrenheit = inputTwo;
+    fahrenheit = inputOne;
     if (selectOne.value === 'Celsius') {
-      inputOne.value = ((Number(fahrenheit.value) - 32) * 5 / 9).toFixed(2);
+      inputTwo.value = ((Number(fahrenheit.value) * 5 / 9) + 32).toFixed(2);
     }
     if (selectOne.value === 'Kelvin') {
-      inputOne.value = ((Number(fahrenheit.value) - 32) * 5 / 9 + 273.15).toFixed(2);
+      inputTwo.value = ((Number(fahrenheit.value) - 32) * 5 / 9 + 273.15).toFixed(2);
     }
     if (selectOne.value === 'Fahrenheit') {
-      inputOne.value = fahrenheit.value;
+      inputTwo.value = fahrenheit.value;
     }
   }
   if (selectTwo.value === 'Kelvin') {
-    kelvin = inputTwo;
+    kelvin = inputOne;
     if (selectOne.value === 'Celsius') {
-      inputOne.value = ((Number(kelvin.value) - 273.15)).toFixed(2);
+      inputTwo.value = ((Number(kelvin.value) - 273.15)).toFixed(2);
     }
     if (selectOne.value === 'Fahrenheit') {
-      inputOne.value = ((Number(kelvin.value) - 273.15) * 9 / 5 + 32).toFixed(2);
+      inputTwo.value = ((Number(kelvin.value) - 273.15) * 9 / 5 + 32).toFixed(2);
     }
     if (selectOne.value === 'Kelvin') {
-      inputOne.value = kelvin.value;
+      inputTwo.value = kelvin.value;
     }
   }
-}
-
-
-
-/*
-
-//Celsius   to kelvin and fahrenheit
-
-celsius.oninput = function () {
-    if (celsius.value) {
-    kelvin.value = (Number(celsius.value) + 273).toFixed(2);
-    fahrenheit.value = (Number(celsius.value) * 9 / 5 + 32).toFixed(2);
-  } else {
-    kelvin.value = '';
-    fahrenheit.value = '';
-  }
 
 }
 
-//Kelvin to celsius and fahrenheit
-
-kelvin.oninput = function () {
 
 
-  if (fahrenheit.value) {
-    celsius.value = ((Number(fahrenheit.value) - 32) * 5 / 9).toFixed(2);
-    kelvin.value = ((Number(fahrenheit.value) + 459) * 5 / 9).toFixed(2);
-  } else {
-    kelvin.value = '';
-    celsius.value = '';
-  }
-}
-
-// Fahrenheit to celsius and kelvin
-
-fahrenheit.oninput = function () {
-
-  if (fahrenheit.value) {
-    celsius.value = ((Number(fahrenheit.value) - 32) * 5 / 9).toFixed(2);
-    kelvin.value = ((Number(fahrenheit.value) + 459) * 5 / 9).toFixed(2);
-  } else {
-    kelvin.value = '';
-    celsius.value = '';
-  }
-}
-
-
-
-*/
+/* */

@@ -1,4 +1,4 @@
-const Teacher = {
+export const Teacher = {
   name: 'Ali',
   lastname: 'Haydar',
   age: 25,
@@ -7,4 +7,3 @@ const Teacher = {
 }
 
 
-export default Teacher;
