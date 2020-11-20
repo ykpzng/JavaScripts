@@ -3,9 +3,10 @@
 
 //import clauseMix from './clauseMix.js';    // ES6 versiyon  (type:module)
 
-import { countCharacter, capitalizeFirstCharacterOfWords, reverseString, reverseAllWords, replaceFirstOccurence, replaceAllOccurrences, encode, palindrome, pigLatin } from './clauseMix.js';
+import { countCharacter, capitalizeFirstCharacterOfWords, reverseString, reverseAllWords, replaceFirstOccurence, replaceAllOccurrences, encode, palindrome, pigLatin } from './clauseMix.js';  // Tek tek import versiyonu
 
 /*  // Object ile yapıldı
+
 function displayClause() {
   console.log(clauseMix.countCharacter("What is the color of the sky?", "t"));
   console.log(clauseMix.capitalizeFirstCharacterOfWords("What is the color of the sky?"));

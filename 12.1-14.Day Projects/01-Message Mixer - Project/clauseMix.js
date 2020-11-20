@@ -68,4 +68,4 @@ const pigLatin = (sentence, character) => {
 
 //export default ClauseMix;      //ES6 versiyon   (type:module)
 
-export { countCharacter, capitalizeFirstCharacterOfWords, reverseString, reverseAllWords, replaceFirstOccurence, replaceAllOccurrences, encode, palindrome, pigLatin };
+export { countCharacter, capitalizeFirstCharacterOfWords, reverseString, reverseAllWords, replaceFirstOccurence, replaceAllOccurrences, encode, palindrome, pigLatin };  // Tek tek gönderim versiyonu
