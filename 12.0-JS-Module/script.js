@@ -1,8 +1,8 @@
 
-import { Student } from './student';
+const teacher = require('./teacher');
+const student = require('./student');
 
-import { Teacher } from './teacher';
 
-console.log(Student);
-console.log(Teacher);
+console.log(student);
+console.log(teacher);
 

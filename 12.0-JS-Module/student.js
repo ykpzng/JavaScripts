@@ -1,9 +1,10 @@
-export const Student = {
-  name: 'Ali',
-  lastname: 'Haydar',
+const Student = {
+  name: 'John',
+  lastname: 'Doe',
   age: 25,
-  gender: 'Erkek'
+  gender: 'Male'
 }
 
+module.exports = Student;
 
 
