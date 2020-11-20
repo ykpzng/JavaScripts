@@ -1,28 +1,34 @@
 
 //buttonlardan kontrol
-
 const drums = document.querySelectorAll('.drum');
 const order = ['w', 'a', 's', 'd', 'j', 'k', 'l'];
 
 for (let i = 0; i < drums.length; i++) {
-  let time;
+
   drums[i].onclick = function () {
     let audio = new Audio('sounds/tom-' + order[i] + '.mp3');
     audio.play();
 
-    function runTime() {
-      time = setTimeout(() => { drums[i].className = 'pressed' }, 2000);
-    }
+    let active = document.querySelector('.' + order[i]);
+    active.classList.add('pressed');
+    setTimeout(() => { active.classList.remove('pressed') }, 100);
   }
-
-  function stop() {
-    clearTimeout(time);
-  }
-
 }
 
 // Klavyeden kontrol
+// e.key version
 
+document.onkeypress = function (e) {
+  let audio = new Audio('sounds/tom-' + e.key + '.mp3');
+  audio.play();
+
+  let active = document.querySelector('.' + e.key);
+  active.classList.add('pressed');
+  setTimeout(() => { active.classList.remove('pressed') }, 100);
+}
+
+//e.code version
+/*
 document.onkeypress = function (e) {
   let tmp;
   if (e.code === 'KeyW') {
@@ -45,5 +51,5 @@ document.onkeypress = function (e) {
   audio.play();
 }
 
-
+*/
 
