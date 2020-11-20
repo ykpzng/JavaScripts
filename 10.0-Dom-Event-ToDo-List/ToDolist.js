@@ -1,6 +1,4 @@
 
-
-
 const inputBox = document.getElementById('item_name');
 
 function addItem(e) {
