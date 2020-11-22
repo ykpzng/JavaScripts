@@ -42,7 +42,7 @@ inputTwo.oninput = function () {
     if (selectTwo.value === 'Fahrenheit') {
       fahrenheit = inputTwo;
       if (selectOne.value === 'Celsius') {
-        inputOne.value = (Number(fahrenheit.value) - 32 * 5 / 9).toFixed(2);
+        inputOne.value = ((Number(fahrenheit.value) - 32) * 5 / 9).toFixed(2);
       }
       if (selectOne.value === 'Kelvin') {
         inputOne.value = ((Number(fahrenheit.value) - 32) * 5 / 9 + 273.15).toFixed(2);
@@ -89,7 +89,7 @@ document.getElementById('select_two').onchange = function () {
     if (selectOne.value === 'Fahrenheit') {
       fahrenheit = inputOne;
       if (selectTwo.value === 'Celsius') {
-        inputTwo.value = (Number(fahrenheit.value) - 32 * 5 / 9).toFixed(2);
+        inputTwo.value = ((Number(fahrenheit.value) - 32) * 5 / 9).toFixed(2);
       }
       if (selectTwo.value === 'Kelvin') {
         inputTwo.value = ((Number(fahrenheit.value) - 32) * 5 / 9 + 273.15).toFixed(2);
