@@ -71,7 +71,6 @@ inputTwo.oninput = function () {
 
 // İkinci select değeri değiştiğinde gerçekleşen işlemler
 document.getElementById('select_two').onchange = function () {
-
   inputTwo.value = '';
   if (inputOne.value) {
     if (selectOne.value === 'Celsius') {
@@ -114,11 +113,7 @@ document.getElementById('select_two').onchange = function () {
     inputTwo.value = '';
 
   }
-
-
 }
-
-
 
 function firstGroupChange() {
   if (selectOne.value === 'Celsius') {
