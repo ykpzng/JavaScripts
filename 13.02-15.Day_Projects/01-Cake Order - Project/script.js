@@ -67,13 +67,12 @@ const payment = (resolvedValueArray) => {
 
 const stockControl = (resolvedValueArray) => {
   const inStock = patisserie[resolvedValueArray[0]].stock;
-  const order = resolvedValueArray[1];
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (inStock > 1) {
-        resolve(`There are ${inStock} items left in your stock.`)
+        resolve(`There are ${inStock} ${resolvedValueArray[0]} left in your stock.`)
       } else {
-        reject(`ATTENTION\nStock is at critical level.(${inStock}).`)
+        reject(`ATTENTION\n${resolvedValueArray[0]} is at critical level.(${inStock}).`)
       }
     }, 1000);
   });
