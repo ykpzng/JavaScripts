@@ -1,5 +1,6 @@
 // Async - Await
 // Async function herzaman promise döndürür.
+// 'await' bir 'async' function içerisinde kullanılır.
 
 async function name() {  // Function declaration
   //await (pedding durumundaki işlem)
@@ -19,6 +20,8 @@ const promiseFunction = () => {
     }, 2000);
   });
 }
+
+
 
 
 const asyncAwait = async () => {
