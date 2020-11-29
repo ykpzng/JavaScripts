@@ -2,7 +2,7 @@
 // *Promise Use Of and Structure
 /*
 const myFirstPromise = new Promise(function (resolve, reject) {
-  // pending events are writing here 
+  // pending events are writing here
 });
 
 console.log(myFirstPromise);
@@ -10,7 +10,7 @@ console.log(myFirstPromise);
 // ---- or -----
 
 const executerFunction = function (resolve, reject) {
-  // pending events are writing here 
+  // pending events are writing here
   const value = 5;
   if (value < 6) {
     resolve('This is a resolved..')
