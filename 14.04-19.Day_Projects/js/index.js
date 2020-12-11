@@ -20,7 +20,12 @@ const getRecipe = async () => {
         const response = await fetch(UrlToFetch);
         if (response.ok) {
             const jsonResponse = await response.json();
-            renderResults(jsonResponse);
+            if (jsonResponse.results === 0) {
+                alert("No recipe available....");
+            } else {
+                renderResults(jsonResponse);
+            }
+            input.value = "";
         }
     } catch (error) {
         console.log(error);

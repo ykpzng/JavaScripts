@@ -7,8 +7,6 @@ export const renderResults = recipe => {
   for (let i = 0; i < 10; i++) {   // only 10 item for list
     tenRecipes.push(recipe.data.recipes[i]);
   }
-  console.log(recipe);
-  console.log(tenRecipes);
 
   tenRecipes.forEach(item => {
     const recipeList = `
