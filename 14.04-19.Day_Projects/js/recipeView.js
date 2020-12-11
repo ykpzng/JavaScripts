@@ -46,5 +46,3 @@ export const showRecipe = recipe => {
 
 };
 
-
-

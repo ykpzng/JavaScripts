@@ -24,20 +24,27 @@ const getRecipe = async () => {
                 alert("No recipe available....");
             } else {
                 renderResults(jsonResponse);
+                getOneRecipe(jsonResponse.data.recipes[0].id); // Seçilen türün ilk tarifini listeler
             }
             input.value = "";
         }
     } catch (error) {
         console.log(error);
     }
-
-
 }
+// Searsh button
+submitBtn.addEventListener('click', () => {
+    if (input.value) {
+        getRecipe()
+    } else {
+        alert("You have to enter some kind...");
+    }
 
-submitBtn.addEventListener('click', getRecipe);
+});
 
-let addJsonResponse = "";
-let shoppingId = 0;
+let addJsonResponse = ""; // Seçilen tarifi shoping list te tekrar kullabilmek için değişkene aldım
+let shoppingId = 0;       // Seçilen tarifin idsini shoping list te tekrar kullabilmek için değişkene aldım
+
 const getOneRecipe = async (id) => {
 
     try {
@@ -65,9 +72,8 @@ searchResList.addEventListener('click', e => {
 
 //Add to shopping list
 addToShoppingBrt.addEventListener('click', () => {
-    if (shoppingId !== 0) {
+    if (shoppingId !== 0) {  //  getOneRecipe() ki id dolu ise, yani herhangi bir tarif seçilmişse shopping list oluştur 
         addShopping(addJsonResponse);
-
     } else {
         alert("You must choose a recipe");
     }

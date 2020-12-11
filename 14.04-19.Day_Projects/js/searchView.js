@@ -1,12 +1,19 @@
 const resultList = document.querySelector('.results__list');
 
 export const renderResults = recipe => {
-  console.clear();
   resultList.innerHTML = "";
+
   const tenRecipes = [];
-  for (let i = 0; i < 10; i++) {   // only 10 item for list
-    tenRecipes.push(recipe.data.recipes[i]);
+  if (recipe.data.recipes.length < 10) {  // Seçilen yemeğin tarif sayısı 10 adetten az ise
+    for (let i = 0; i < recipe.data.recipes.length; i++) {
+      tenRecipes.push(recipe.data.recipes[i]);
+    }
+  } else {         // Seçilen yemeğin tarif sayısı 10 adetten fazla ise 10 adet al
+    for (let i = 0; i < 10; i++) {
+      tenRecipes.push(recipe.data.recipes[i]);
+    }
   }
+
 
   tenRecipes.forEach(item => {
     const recipeList = `
