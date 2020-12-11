@@ -43,6 +43,7 @@ const getOneRecipe = async (id) => {
             showRecipe(jsonResponse);
             addJsonResponse = jsonResponse;
             shoppingId = id;
+            console.log(jsonResponse);
         }
     } catch (error) {
         console.log(error);

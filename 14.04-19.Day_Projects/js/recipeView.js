@@ -1,8 +1,10 @@
 
 const ingrediendConteiner = document.querySelector('.recipe__ingredient-list');
+const recipeFigureContainer = document.querySelector('.recipe__fig');
 
 export const showRecipe = recipe => {
   ingrediendConteiner.innerHTML = "";
+  recipeFigureContainer.innerHTML = "";
   recipe.data.recipe.ingredients.forEach(item => {
     const ingrediendList = `
       <li class="recipe__item">
@@ -16,9 +18,15 @@ export const showRecipe = recipe => {
           </div>
       </li>`
     ingrediendConteiner.insertAdjacentHTML("afterbegin", ingrediendList);
-
   });
 
+  const recipeFigure = `
+  <img src="${recipe.data.recipe.image_url}" alt="Tomato" class="recipe__img">
+  <h1 class="recipe__title">
+      <span>${recipe.data.recipe.title}</span>
+  </h1>`;
+  recipeFigureContainer.insertAdjacentHTML("afterbegin", recipeFigure);
 };
+
 
 
