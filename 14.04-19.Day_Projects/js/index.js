@@ -37,7 +37,7 @@ submitBtn.addEventListener('click', () => {
     if (input.value) {
         getRecipe()
     } else {
-        alert("You have to enter some kind...");
+        alert("You have to enter a recipe kind...");
     }
 
 });
