@@ -26,13 +26,11 @@ class HelloMessage extends React.Component {
 class HelloNames extends React.Component {
   render() {
     return (
-      <div>
-        <NoteList>
-          {this.props.names.map((name, index) => (
-            <p key={index}>{name}</p>
-          ))}
-        </NoteList>
-      </div>
+      <NoteList>
+        {this.props.names.map((name, index) => (
+          <p key={index}>{name}</p>
+        ))}
+      </NoteList>
     );
   }
 }
@@ -42,8 +40,20 @@ class NoteList extends React.Component {
     return (
       <div>
         <ol>
-          {React.Children.map(this.props.children, (el) => (
-            <li>{el}</li>
+          {this.props.children.map((el) => (
+            <li
+              className={
+                el.key === "0"
+                  ? "first"
+                  : el.key === "1"
+                  ? "second"
+                  : el.key === "2"
+                  ? "third"
+                  : "forth"
+              }
+            >
+              {el}
+            </li>
           ))}
         </ol>
       </div>
