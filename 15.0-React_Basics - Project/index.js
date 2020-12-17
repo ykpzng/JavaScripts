@@ -40,7 +40,7 @@ class NoteList extends React.Component {
     return (
       <div>
         <ol>
-          {this.props.children.map((el) => (
+          {React.Children.map(this.props.children, (el) => (
             <li
               className={
                 el.key === "0"
